@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 mongoose.set("strictQuery", false); //requerido para quitar el warning
 mongoose
   .connect(
-    "mongodb+srv://usuario:<password>@cluster0.hnkj25l.mongodb.net/?retryWrites=true&w=majority",
+    process.env.DB_URI,
     { useNewUrlParser: true }
   )
   .then(() => console.log("connection successful"))
